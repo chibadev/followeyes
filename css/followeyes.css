@@ -1,0 +1,26 @@
+body {
+    background: #65D7F7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Eye. Begin */
+.eye-ball {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background: #FFF;
+    border-radius: 50%;
+    width: 100px;
+    height: 70px;
+}
+.eye-pupil {
+    position: relative;
+    top: 20px;
+    left: 35px;
+    background: #000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+/* Eye. End */

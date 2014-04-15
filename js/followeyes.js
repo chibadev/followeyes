@@ -1,42 +1,34 @@
-// сам глаз и "зрачок":
-var eyeParentLeft = $('.dude_eye-left_parent'),
-    eyeParentRight = $('.dude_eye-right_parent'),
+/*
+ * Followeyes.js.
+ * Created by Chiba.
+ */
 
-    eyeLeft = eyeParentLeft.find('.dude_eye-left'),
-    eyeRight = eyeParentRight.find('.dude_eye-right');
-// координаты центра глаза:
-var cx_l = eyeParentLeft.offset().left + 50,
-    cy_l = eyeParentLeft.offset().top + 526 + 50,
+jQuery(document).ready(function() {
+    // Eye initialization
+    var eyeBall = $('.eye-ball'),
+        eyePupil = eyeBall.find('.eye-pupil'),
+        eyeCenterX = eyeBall.offset().left + 50,
+        eyeCenterY = eyeBall.offset().top + 50,
+        r = 15,                                      // gyration radius
+        pupilX, pupilY,                             // pupil coordinates
+        cursorX, cursorY,                           // cursor coordinates
+        isProcessed = false;
 
-    cx_r = eyeParentRight.offset().left + 50,
-    cy_r = eyeParentRight.offset().top + 526 + 50;
-// радиус окружности вращения и др. переменные:
-var r = 4,
-    x_l, y_l,
-    x_r, y_r,
-    x2, y2,
-    isEyeProcessed = false;
-// вешаем обработчик события на передвежение мыши:
-$('html,body').mousemove(function(e) {
-    if (!isEyeProcessed) {
-        isEyeProcessed = true;
-// координаты курсора:
-        var x2 = e.pageX, y2 = e.pageY;
-// используем полученные формулы и рассчитываем координаты зрачка:
-        y_l = ((r * (y2 - cy_l)) / Math.sqrt((x2 - cx_l) * (x2 - cx_l) + (y2 - cy_l) * (y2 - cy_l))) + cy_l;
-        x_l = (((y_l - cy_l) * (x2 - cx_l)) / (y2 - cy_l)) + cx_l;
+    $('html,body').mousemove(function(event) {
+        if (!isProcessed) {
+            isProcessed = true;
 
-        y_r = ((r * (y2 - cy_r)) / Math.sqrt((x2 - cx_r) * (x2 - cx_r) + (y2 - cy_r) * (y2 - cy_r))) + cy_r;
-        x_r = (((y_r - cy_r) * (x2 - cx_r)) / (y2 - cy_r)) + cx_r;
-// применяем координаты:
-        eyeLeft.css({
-            marginTop: (y_l - cy_l) + 'px',
-            marginLeft: (x_l - cx_l) * 2 + 'px'
-        });
-        eyeRight.css({
-            marginTop: (y_r - cy_r) + 'px',
-            marginLeft: (x_r - cx_r) * 2 + 'px'
-        });
-        isEyeProcessed = false;
-    }
+            cursorX = event.pageX
+            cursorY = event.pageY;
+
+            pupilY = ((r * (cursorY - eyeCenterY)) / Math.sqrt((cursorX - eyeCenterX) * (cursorX - eyeCenterX) + (cursorY - eyeCenterY) * (cursorY - eyeCenterY))) + eyeCenterY;
+            pupilX = (((pupilY - eyeCenterY) * (cursorX - eyeCenterX)) / (cursorY - eyeCenterY)) + eyeCenterX;
+
+            eyePupil.css({
+                marginTop: (pupilY - eyeCenterY) + 'px',
+                marginLeft: (pupilX - eyeCenterX) * 2 + 'px'
+            });
+            isProcessed = false;
+        }
+    });
 });
