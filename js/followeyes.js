@@ -7,9 +7,9 @@ jQuery(document).ready(function() {
     // Eye initialization
     var eyeBall = $('.eye-ball'),
         eyePupil = eyeBall.find('.eye-pupil'),
-        eyeCenterX = eyeBall.offset().left + 50,
-        eyeCenterY = eyeBall.offset().top + 50,
-        r = 15,                                      // gyration radius
+        eyeCenterX = eyeBall.offset().left + 16,
+        eyeCenterY = eyeBall.offset().top + 16,
+        r = 12,                                      // gyration radius
         pupilX, pupilY,                             // pupil coordinates
         cursorX, cursorY,                           // cursor coordinates
         isProcessed = false;
@@ -26,7 +26,7 @@ jQuery(document).ready(function() {
 
             eyePupil.css({
                 marginTop: (pupilY - eyeCenterY) + 'px',
-                marginLeft: (pupilX - eyeCenterX) * 2 + 'px'
+                marginLeft: (pupilX - eyeCenterX) * 1 + 'px'
             });
             isProcessed = false;
         }
