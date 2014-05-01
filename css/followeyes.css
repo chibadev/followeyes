@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'Bitter_B';
+    src: url('/fonts/bitter-bold-webfont.eot');
+    src: url('/fonts/bitter-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/bitter-bold-webfont.woff') format('woff'),
+         url('/fonts/bitter-bold-webfont.ttf') format('truetype'),
+         url('/fonts/bitter-bold-webfont.svg#bitterbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bitter_BI';
+    src: url('/fonts/bitter-bolditalic-webfont.eot');
+    src: url('/fonts/bitter-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/bitter-bolditalic-webfont.woff') format('woff'),
+         url('/fonts/bitter-bolditalic-webfont.ttf') format('truetype'),
+         url('/fonts/bitter-bolditalic-webfont.svg#bitterbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bitter_I';
+    src: url('/fonts/bitter-italic-webfont.eot');
+    src: url('/fonts/bitter-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/bitter-italic-webfont.woff') format('woff'),
+         url('/fonts/bitter-italic-webfont.ttf') format('truetype'),
+         url('/fonts/bitter-italic-webfont.svg#bitteritalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bitter_R';
+    src: url('/fonts/bitter-regular-webfont.eot');
+    src: url('/fonts/bitter-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/bitter-regular-webfont.woff') format('woff'),
+         url('/fonts/bitter-regular-webfont.ttf') format('truetype'),
+         url('/fonts/bitter-regular-webfont.svg#bitterregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: #65D7F7;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 48px;
+    line-height: 64px;
+    font-family: "Bitter_B";
+    color: #333;
+}
+
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+#header {
+    height: 160px;
+}
+#main {
+    clear: both;
+}
+
+#header h1 {
+    float: left;
+    line-height: 160px;
+    text-shadow: 2px 2px 1px #3E90A7;
+}
+.download {
+    display: block;
+    float: right;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    margin: 55px 0;
+    background: #23a9ce;
+    border-radius: 8px;
+    font-size: 24px;
+    font-family: "Bitter_R";
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: background 0.3s ease;
+    -moz-transition: background 0.3s ease;
+    -ms-transition: background 0.3s ease;
+    -o-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+}
+.download:hover {
+    background: #0589AD;
+}
+.cat {
+    float: left;
+    position: absolute;
+    width: 264px;
+    height: 398px;
+    background: url(/img/cat2.png);
+    background-size: contain;
+}
+
+.description {
+    float: right;
+    width: 400px;
+    height: 398px;
+    font-size: 20px;
+    font-family: "Bitter_R";
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+/* Eye. Begin */
+.eye-ball {
+    position: absolute;
+    top: 220px;
+    left: 61px;
+    border-radius: 50%;
+    width: 62px;
+    height: 62px;
+}
+.eye-ball:last-child {
+    left: 138px;
+}
+.eye-pupil {
+    position: relative;
+    top: 16px;
+    left: 16px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: url(/img/eye-pupil.png);
+    background-size: contain;
+}
+/* Eye. End */
