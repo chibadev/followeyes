@@ -101,7 +101,7 @@ h1 {
     position: absolute;
     width: 264px;
     height: 398px;
-    background: url(/img/cat2.png);
+    background: url(../img/cat2.png);
     background-size: contain;
 }
 
@@ -134,7 +134,7 @@ h1 {
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    background: url(/img/eye-pupil.png);
+    background: url(../img/eye-pupil.png);
     background-size: contain;
 }
 /* Eye. End */
