@@ -26,4 +26,9 @@ $(document).ready(function() {
 });
 ```
 
-That's it!
+
+**That's it!**
+
+*Regards, Ivan Ryabov*
+
+*[ChibaDev](http://chibadev.github.io)*
