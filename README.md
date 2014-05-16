@@ -1,6 +1,6 @@
 #Followeyes.js
 This jQuery plugin allows you to easily add to your website eyes that is following your mouse.  
-You can see a [demo](http://chibadev.github.io/followeyes)
+You can see a [demo](http://chibadev.github.io/followeyes).
 
 ##Initialization
 To initialize the plugin simply paste this code inside the `<head>`:
