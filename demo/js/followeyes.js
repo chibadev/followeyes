@@ -1,18 +1,19 @@
 /*
  * Followeyes.js.
- * Created by Chiba.
+ * Created by Ivan "Chiba" Ryabov.
  *
- * TODO: {
- *      1: different radius for different eyes
- * }
  */
 
 
 (function($) {
     $.fn.followeyes = function(params) {
         // Define
-        var eyeBall, eyePupil,
-            eyeCenterX, eyeCenterY,
+        var eyeBall,
+            eyePupil,
+            eyeCenterX,
+            eyeCenterY,
+            eyeType,
+            a_EyeTypes = ['circle', 'ellipse'],
             pupilX, pupilY,
             cursorX, cursorY,
             r, isProcessed,
@@ -30,6 +31,19 @@
         else
             eyePupil = eyeBall.find('.' + params['eyePupil']);
 
+        if (!params['eyeType'] || !jQuery.inArray(params['eyeType'], a_EyeTypes))
+            eyeType = 1
+        else {
+            switch (params['eyeType']) {
+                case 'circle':
+                    eyeType = 1;
+                    break;
+                case 'ellipse':
+                    eyeType = 2;
+                    break;
+            }
+        }
+
         if (!params['radius'])
             r = 10;
         else
@@ -38,15 +52,14 @@
         isProcessed = false;
 
         // Obtain the coordinates of the centers of all eyes
-        i = 1;
         eyeBall.each(function() {
+            i++;
             eyeCenterX = $(this).offset().left + ($(this).width() / 2);
             eyeCenterY = $(this).offset().top + ($(this).height() / 2);
             $eyes[i] = {
                 eyeCenterX: eyeCenterX,
                 eyeCenterY: eyeCenterY,
             }
-            i++;
         });
 
         // Rolling eyes when moving the mouse
@@ -64,10 +77,10 @@
 
                     $(this).css({
                         marginTop: (pupilY - $eyes[n].eyeCenterY) + 'px',
-                        marginLeft: (pupilX - $eyes[n].eyeCenterX) * 1 + 'px'
+                        marginLeft: (pupilX - $eyes[n].eyeCenterX) * eyeType + 'px'
                     });
                     n++;
-                });
+                }); 
 
                 isProcessed = false;
             }
