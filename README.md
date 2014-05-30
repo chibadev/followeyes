@@ -14,6 +14,7 @@ Currently available to you 3 options:
 
 - **eyeBall:** set the eye's className *(`.eye-ball` default)*
 - **eyePupil:** set the pupils's className *(`.eye-pupil` default)*
+- **eyeType:** set the the type of eye *(`circle` default)*
 - **radius:** set the radius of eye's rotation *(`10` default)*
     
 #####Example:
@@ -22,6 +23,7 @@ $(document).ready(function() {
     $().followeyes({
         eyeBall: 'eye-ball',
         eyePupil: 'eye-pupil',
+        eyeType: 'circle', // available 'circle' and 'ellipse'
         radius: 12
     });
 });
