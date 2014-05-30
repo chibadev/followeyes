@@ -1,6 +1,6 @@
 /*
  * Followeyes.js.
- * Created by Chiba.
+ * Created by Ivan "Chiba" Ryabov.
  *
  * TODO: {
  *      1: different radius for different eyes
