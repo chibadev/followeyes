@@ -1,6 +1,7 @@
 /*
  * Followeyes.js.
  * Created by Ivan "Chiba" Ryabov.
+ * Some comment
  *
  */
 
